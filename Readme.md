@@ -14,23 +14,23 @@
 	DROP USER <user>;
 ```
 ### Granting Permission/Privileges
-```
+``` SQL
 	GRANT <privileges> ON <database> TO <user>;
 ```
 Grant Global Access
-```
+``` SQL
 	GRANT ALL ON *.* TO 'robert'@'%' WITH GRANT OPTION;
 ```
 Grant Read Write Access
-```
+``` SQL
 	GRANT SELECT,INSERT,UPDATE,DELETE ON serv.* TO 'jeffrey'@'localhost';
 ```
 Grant Read Access and power to give the same to other users
-```
+``` SQL
 	GRANT SELECT ON edu.staff TO 'david'@'localhost' WITH GRANT OPTION;
 ```
 Custom Grant
-```
+``` SQL
 	GRANT ALL ON logan.* TO 'quentin'@'localhost' WITH MAX_QUERIES_PER_HOUR
 	100;
 ```
@@ -40,11 +40,11 @@ Custom Grant
 ### Adding/removing privileges
 
 ##### Basic Syntax
-```
+``` SQL
 	REVOKE <privileges> ON <database> FROM <user>;
 ```
 ##### Removing GRANT Option Priveleges
-```    
+``` SQL    
     REVOKE DELETE,GRANT OPTION ON cust.* FROM 'todd'@'%';
 ```    
 #####	 Removing all priveleges    
@@ -61,13 +61,13 @@ Custom Grant
 ```
 
 ### Altering Column
-```
+``` SQL
     ADD <column_name> <column_definition> [FIRST | AFTER <column_name>];
 ```
 You can only use either FIRST or AFTER and not both
 
 ### Modifying Column
-```
+``` SQL
     MODIFY <column_name> <column_definition>;
 ```
 # **CRUD OPERATIONS**
@@ -111,25 +111,25 @@ You can only use either FIRST or AFTER and not both
 ```
 # **BACKING UP DATABASE**
 
-```
+``` SQL
     mysqldump [-u username] [-p] database_name [table_name]
 ```
 
 mysqldump outputs on standard output. Use pipiing to direct that output to another .sql file. 
 
-```
+``` SQL
     mysqldump -u root -p test > test.sql
 ```
 
 ### Restoring data
-```
+``` SQL
     mysql -u root -p test < test.sql
 ```
 
 # **Tab Delimited Files**
 We can use mysqldump to create tab delimited tab files. It willl create two files. One with the actual data and the other with the commands to create that data.
 
-```
+``` SQL
     mysqldump --tab /tmp/ -u root -p test employees
 ```
 
