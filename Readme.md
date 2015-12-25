@@ -6,11 +6,11 @@
 1. [] : Optional
 
 ### Creating User
-```
+``` SQL
 	CREATE USER 'username'@'host' IDENTIFIED BY 'password';
 ```
 ### Removing User
-```
+``` SQL
 	DROP USER <user>;
 ```
 ### Granting Permission/Privileges
