@@ -47,7 +47,7 @@ Custom Grant
 ``` SQL    
     REVOKE DELETE,GRANT OPTION ON cust.* FROM 'todd'@'%';
 ```    
-#####	 Removing all priveleges    
+######	 Removing all priveleges    
 ``` SQL
     REVOKE ALL,GRANT OPTION FROM 'neil'@'%.example.com';
 ```
